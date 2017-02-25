@@ -96,6 +96,9 @@
                                                         <constraint firstItem="kNO-0m-g82" firstAttribute="top" secondItem="0cW-8q-ykf" secondAttribute="top" constant="8" id="prp-gz-D0r"/>
                                                         <constraint firstItem="j7G-7w-PYa" firstAttribute="top" secondItem="kNO-0m-g82" secondAttribute="bottom" constant="8" id="zOJ-Ga-8kP"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
