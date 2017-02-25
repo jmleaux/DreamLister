@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var segment: UISegmentedControl!
-
+    
+    var fetchedResultsController: NSFetchedResultsController<Item>!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +38,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 0
+    }
+    
+    func attemptFetch() {
+        
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        let dataSort = NSSortDescriptor(key: "created", ascending: false)
+        
+        
     }
     
     
