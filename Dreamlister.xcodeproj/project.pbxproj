@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CAABBD801E6188ED0002E95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */; };
-		CAABBD821E6188ED0002E95C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD811E6188ED0002E95C /* ViewController.swift */; };
+		CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD811E6188ED0002E95C /* MainVC.swift */; };
 		CAABBD851E6188ED0002E95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD831E6188ED0002E95C /* Main.storyboard */; };
 		CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD861E6188ED0002E95C /* Dreamlister.xcdatamodeld */; };
 		CAABBD8A1E6188ED0002E95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD891E6188ED0002E95C /* Assets.xcassets */; };
@@ -21,12 +21,14 @@
 		CAABBDA11E618EA70002E95C /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD991E618EA70002E95C /* ItemType+CoreDataProperties.swift */; };
 		CAABBDA21E618EA70002E95C /* Store+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD9A1E618EA70002E95C /* Store+CoreDataClass.swift */; };
 		CAABBDA31E618EA70002E95C /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */; };
+		CAABBDA71E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */; };
+		CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBDA91E6195510002E95C /* MaterialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CAABBD7C1E6188ED0002E95C /* Dreamlister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamlister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CAABBD811E6188ED0002E95C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAABBD811E6188ED0002E95C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CAABBD841E6188ED0002E95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CAABBD871E6188ED0002E95C /* Dreamlister.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dreamlister.xcdatamodel; sourceTree = "<group>"; };
 		CAABBD891E6188ED0002E95C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		CAABBD991E618EA70002E95C /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CAABBD9A1E618EA70002E95C /* Store+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg"; sourceTree = "<group>"; };
+		CAABBDA91E6195510002E95C /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +76,12 @@
 		CAABBD7E1E6188ED0002E95C /* Dreamlister */ = {
 			isa = PBXGroup;
 			children = (
+				CAABBDA81E6195310002E95C /* View */,
 				CAABBDA41E618ED30002E95C /* Model */,
 				CAABBDA51E618EDA0002E95C /* Generated */,
 				CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */,
-				CAABBD811E6188ED0002E95C /* ViewController.swift */,
+				CAABBD811E6188ED0002E95C /* MainVC.swift */,
+				CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */,
 				CAABBD831E6188ED0002E95C /* Main.storyboard */,
 				CAABBD891E6188ED0002E95C /* Assets.xcassets */,
 				CAABBD8B1E6188ED0002E95C /* LaunchScreen.storyboard */,
@@ -105,6 +111,14 @@
 				CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */,
 			);
 			name = Generated;
+			sourceTree = "<group>";
+		};
+		CAABBDA81E6195310002E95C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAABBDA91E6195510002E95C /* MaterialView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAABBD8D1E6188ED0002E95C /* LaunchScreen.storyboard in Resources */,
+				CAABBDA71E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg in Resources */,
 				CAABBD8A1E6188ED0002E95C /* Assets.xcassets in Resources */,
 				CAABBD851E6188ED0002E95C /* Main.storyboard in Resources */,
 			);
@@ -180,9 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAABBD821E6188ED0002E95C /* ViewController.swift in Sources */,
+				CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */,
 				CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */,
 				CAABBDA11E618EA70002E95C /* ItemType+CoreDataProperties.swift in Sources */,
+				CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */,
 				CAABBD9C1E618EA70002E95C /* Item+CoreDataClass.swift in Sources */,
 				CAABBDA31E618EA70002E95C /* Store+CoreDataProperties.swift in Sources */,
 				CAABBD9E1E618EA70002E95C /* Image+CoreDataClass.swift in Sources */,
