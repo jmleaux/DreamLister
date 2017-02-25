@@ -23,6 +23,7 @@
 		CAABBDA31E618EA70002E95C /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */; };
 		CAABBDA71E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */; };
 		CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBDA91E6195510002E95C /* MaterialView.swift */; };
+		CAABBDAC1E61992C0002E95C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBDAB1E61992C0002E95C /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg"; sourceTree = "<group>"; };
 		CAABBDA91E6195510002E95C /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		CAABBDAB1E61992C0002E95C /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				CAABBDA91E6195510002E95C /* MaterialView.swift */,
+				CAABBDAB1E61992C0002E95C /* ItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAABBDAC1E61992C0002E95C /* ItemCell.swift in Sources */,
 				CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */,
 				CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */,
 				CAABBDA11E618EA70002E95C /* ItemType+CoreDataProperties.swift in Sources */,
