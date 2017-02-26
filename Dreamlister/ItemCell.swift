@@ -18,9 +18,9 @@ class ItemCell: UITableViewCell {
     
     func configureCell(item: Item) {
         
-        title.text = items.title
+        title.text = item.title
         price.text = "$\(item.price)"
-        desc.text = item.desc
+        desc.text = item.details
         
     }
 }

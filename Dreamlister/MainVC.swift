@@ -16,7 +16,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segment: UISegmentedControl!
     
-//    var controller: NSFetchedResultsController<Item>!
     var controller: NSFetchedResultsController<Item>!
     
     
@@ -35,26 +34,24 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
-//        return UITableViewCell()
     }
     
     func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
-        
-        //update cell
-        
+        let item = controller.object(at: indexPath as IndexPath)
+            cell.configureCell(item: item)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
             let sectionInfo = sections[section]
             return sectionInfo.numberOfObjects
-            
         }
         return 0
         
     }
     
-    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
+    
+    func configureCell2(cell: ItemCell, indexPath: NSIndexPath) {
         let item = controller.object(at: indexPath as IndexPath)
         cell.configureCell(item: item)
     }
@@ -64,11 +61,20 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             return sections.count
             
         }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 150
+        
     }
     
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        
+//        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
         
@@ -108,7 +114,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case.update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
-                // update the cell data
+                configureCell2(cell: cell, indexPath: indexPath as NSIndexPath)
             }
             break
         case.move:
