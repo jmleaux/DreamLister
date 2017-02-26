@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA1A67781E63309C009066E8 /* Item_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1A67771E63309C009066E8 /* Item_extension.swift */; };
 		CAABBD801E6188ED0002E95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */; };
 		CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD811E6188ED0002E95C /* MainVC.swift */; };
 		CAABBD851E6188ED0002E95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD831E6188ED0002E95C /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA1A67771E63309C009066E8 /* Item_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item_extension.swift; sourceTree = "<group>"; };
 		CAABBD7C1E6188ED0002E95C /* Dreamlister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamlister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAABBD811E6188ED0002E95C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				CAABBD961E618EA70002E95C /* Image+CoreDataClass.swift */,
 				CAABBD981E618EA70002E95C /* ItemType+CoreDataClass.swift */,
 				CAABBD9A1E618EA70002E95C /* Store+CoreDataClass.swift */,
+				CA1A67771E63309C009066E8 /* Item_extension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */,
 				CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */,
 				CAABBDA11E618EA70002E95C /* ItemType+CoreDataProperties.swift in Sources */,
+				CA1A67781E63309C009066E8 /* Item_extension.swift in Sources */,
 				CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */,
 				CAABBD9C1E618EA70002E95C /* Item+CoreDataClass.swift in Sources */,
 				CAABBDA31E618EA70002E95C /* Store+CoreDataProperties.swift in Sources */,
@@ -374,6 +378,7 @@
 				CAABBD931E6188ED0002E95C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
