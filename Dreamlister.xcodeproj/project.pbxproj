@@ -8,20 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CA1A67781E63309C009066E8 /* Item_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1A67771E63309C009066E8 /* Item_extension.swift */; };
+		CA1A677A1E63410D009066E8 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1A67791E63410D009066E8 /* Item+CoreDataClass.swift */; };
 		CAABBD801E6188ED0002E95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */; };
 		CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD811E6188ED0002E95C /* MainVC.swift */; };
 		CAABBD851E6188ED0002E95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD831E6188ED0002E95C /* Main.storyboard */; };
 		CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD861E6188ED0002E95C /* Dreamlister.xcdatamodeld */; };
 		CAABBD8A1E6188ED0002E95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD891E6188ED0002E95C /* Assets.xcassets */; };
 		CAABBD8D1E6188ED0002E95C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD8B1E6188ED0002E95C /* LaunchScreen.storyboard */; };
-		CAABBD9C1E618EA70002E95C /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD941E618EA70002E95C /* Item+CoreDataClass.swift */; };
-		CAABBD9D1E618EA70002E95C /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD951E618EA70002E95C /* Item+CoreDataProperties.swift */; };
-		CAABBD9E1E618EA70002E95C /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD961E618EA70002E95C /* Image+CoreDataClass.swift */; };
-		CAABBD9F1E618EA70002E95C /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD971E618EA70002E95C /* Image+CoreDataProperties.swift */; };
-		CAABBDA01E618EA70002E95C /* ItemType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD981E618EA70002E95C /* ItemType+CoreDataClass.swift */; };
-		CAABBDA11E618EA70002E95C /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD991E618EA70002E95C /* ItemType+CoreDataProperties.swift */; };
-		CAABBDA21E618EA70002E95C /* Store+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD9A1E618EA70002E95C /* Store+CoreDataClass.swift */; };
-		CAABBDA31E618EA70002E95C /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */; };
 		CAABBDA71E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */; };
 		CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBDA91E6195510002E95C /* MaterialView.swift */; };
 		CAABBDAC1E61992C0002E95C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBDAB1E61992C0002E95C /* ItemCell.swift */; };
@@ -29,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		CA1A67771E63309C009066E8 /* Item_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item_extension.swift; sourceTree = "<group>"; };
+		CA1A67791E63410D009066E8 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CAABBD7C1E6188ED0002E95C /* Dreamlister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamlister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAABBD811E6188ED0002E95C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -37,14 +31,6 @@
 		CAABBD891E6188ED0002E95C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAABBD8C1E6188ED0002E95C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAABBD8E1E6188ED0002E95C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAABBD941E618EA70002E95C /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CAABBD951E618EA70002E95C /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CAABBD961E618EA70002E95C /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CAABBD971E618EA70002E95C /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CAABBD981E618EA70002E95C /* ItemType+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CAABBD991E618EA70002E95C /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CAABBD9A1E618EA70002E95C /* Store+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg"; sourceTree = "<group>"; };
 		CAABBDA91E6195510002E95C /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		CAABBDAB1E61992C0002E95C /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
@@ -98,10 +84,7 @@
 		CAABBDA41E618ED30002E95C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CAABBD941E618EA70002E95C /* Item+CoreDataClass.swift */,
-				CAABBD961E618EA70002E95C /* Image+CoreDataClass.swift */,
-				CAABBD981E618EA70002E95C /* ItemType+CoreDataClass.swift */,
-				CAABBD9A1E618EA70002E95C /* Store+CoreDataClass.swift */,
+				CA1A67791E63410D009066E8 /* Item+CoreDataClass.swift */,
 				CA1A67771E63309C009066E8 /* Item_extension.swift */,
 			);
 			name = Model;
@@ -110,10 +93,6 @@
 		CAABBDA51E618EDA0002E95C /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				CAABBD951E618EA70002E95C /* Item+CoreDataProperties.swift */,
-				CAABBD971E618EA70002E95C /* Image+CoreDataProperties.swift */,
-				CAABBD991E618EA70002E95C /* ItemType+CoreDataProperties.swift */,
-				CAABBD9B1E618EA70002E95C /* Store+CoreDataProperties.swift */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -204,17 +183,10 @@
 				CAABBDAC1E61992C0002E95C /* ItemCell.swift in Sources */,
 				CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */,
 				CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */,
-				CAABBDA11E618EA70002E95C /* ItemType+CoreDataProperties.swift in Sources */,
 				CA1A67781E63309C009066E8 /* Item_extension.swift in Sources */,
 				CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */,
-				CAABBD9C1E618EA70002E95C /* Item+CoreDataClass.swift in Sources */,
-				CAABBDA31E618EA70002E95C /* Store+CoreDataProperties.swift in Sources */,
-				CAABBD9E1E618EA70002E95C /* Image+CoreDataClass.swift in Sources */,
-				CAABBDA01E618EA70002E95C /* ItemType+CoreDataClass.swift in Sources */,
 				CAABBD801E6188ED0002E95C /* AppDelegate.swift in Sources */,
-				CAABBDA21E618EA70002E95C /* Store+CoreDataClass.swift in Sources */,
-				CAABBD9D1E618EA70002E95C /* Item+CoreDataProperties.swift in Sources */,
-				CAABBD9F1E618EA70002E95C /* Image+CoreDataProperties.swift in Sources */,
+				CA1A677A1E63410D009066E8 /* Item+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
