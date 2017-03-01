@@ -25,8 +25,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+
+//        generateTestData()
+
         attemptFetch()
+        
         
     }
 
@@ -137,7 +140,25 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
-    
+    func generateTestData()
+    {
+        let item = Item(context: context)
+        item.title = "MacBook Pro"
+        item.price = 1800
+        item.details = "Fabulous state-of-the-art laptop"
+        
+        let item2 = Item(context: context)
+        item2.title = "Apple Airpods"
+        item2.price = 150
+        item2.details = "Can't wait until these are generally available"
+        
+        let item3 = Item(context: context)
+        item3.title = "Tesla Model S P100"
+        item3.price = 120000
+        item3.details = "Will be a tough choice between this and a Porsche 911 Turbo S. Or the Golf GTI."
+        
+        ad.saveContext()
+    }
     
 }
 
