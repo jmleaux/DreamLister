@@ -12,9 +12,10 @@ import CoreData
 extension Item {
     
     // assign date on create
-    public override func awakeFromInsert() {
+//    public override func awakeFromInsert() {
+    override public func awakeFromInsert() {
         super.awakeFromInsert()
-        self.createdAt = NSDate()
+        self.created = NSDate()
     }
     
 }

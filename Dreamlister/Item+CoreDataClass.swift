@@ -13,7 +13,7 @@ import CoreData
 @objc(Item)
 public class Item: NSManagedObject {
 
-    public override func awakeFromInsert() {
+    override public func awakeFromInsert() {
         super.awakeFromInsert()
         self.created = NSDate()
         
