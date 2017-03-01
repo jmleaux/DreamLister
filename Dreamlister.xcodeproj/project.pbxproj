@@ -16,6 +16,8 @@
 		CA952ED81E670F840019E117 /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA952ED01E670F840019E117 /* ItemType+CoreDataProperties.swift */; };
 		CA952ED91E670F840019E117 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA952ED11E670F840019E117 /* Item+CoreDataClass.swift */; };
 		CA952EDA1E670F840019E117 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA952ED21E670F840019E117 /* Item+CoreDataProperties.swift */; };
+		CA952EDD1E6719CC0019E117 /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA952EDC1E6719CC0019E117 /* ItemDetailsVC.swift */; };
+		CA952EDF1E6723440019E117 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA952EDE1E6723440019E117 /* CustomTextField.swift */; };
 		CAABBD801E6188ED0002E95C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */; };
 		CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAABBD811E6188ED0002E95C /* MainVC.swift */; };
 		CAABBD851E6188ED0002E95C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAABBD831E6188ED0002E95C /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		CA952ED01E670F840019E117 /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CA952ED11E670F840019E117 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CA952ED21E670F840019E117 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CA952EDC1E6719CC0019E117 /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		CA952EDE1E6723440019E117 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CAABBD7C1E6188ED0002E95C /* Dreamlister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dreamlister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAABBD7F1E6188ED0002E95C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAABBD811E6188ED0002E95C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA952EDB1E6719A90019E117 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA952EDC1E6719CC0019E117 /* ItemDetailsVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		CAABBD731E6188ED0002E95C = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		CAABBD7E1E6188ED0002E95C /* Dreamlister */ = {
 			isa = PBXGroup;
 			children = (
+				CA952EDB1E6719A90019E117 /* Controller */,
 				CAABBDA81E6195310002E95C /* View */,
 				CAABBDA41E618ED30002E95C /* Model */,
 				CAABBDA51E618EDA0002E95C /* Generated */,
@@ -96,6 +109,7 @@
 				CAABBDA61E6194CC0002E95C /* 2016_tesla_model-s_sedan_p90d_fq_oem_1_1280.jpg */,
 				CAABBD831E6188ED0002E95C /* Main.storyboard */,
 				CAABBD891E6188ED0002E95C /* Assets.xcassets */,
+				CA952EDE1E6723440019E117 /* CustomTextField.swift */,
 				CAABBD8B1E6188ED0002E95C /* LaunchScreen.storyboard */,
 				CAABBD8E1E6188ED0002E95C /* Info.plist */,
 				CAABBD861E6188ED0002E95C /* Dreamlister.xcdatamodeld */,
@@ -205,11 +219,13 @@
 				CA952ED71E670F840019E117 /* ItemType+CoreDataClass.swift in Sources */,
 				CAABBDAC1E61992C0002E95C /* ItemCell.swift in Sources */,
 				CAABBD821E6188ED0002E95C /* MainVC.swift in Sources */,
+				CA952EDF1E6723440019E117 /* CustomTextField.swift in Sources */,
 				CA952ED31E670F840019E117 /* Image+CoreDataClass.swift in Sources */,
 				CA952ED91E670F840019E117 /* Item+CoreDataClass.swift in Sources */,
 				CAABBD881E6188ED0002E95C /* Dreamlister.xcdatamodeld in Sources */,
 				CA952ED51E670F840019E117 /* Store+CoreDataClass.swift in Sources */,
 				CA952ED61E670F840019E117 /* Store+CoreDataProperties.swift in Sources */,
+				CA952EDD1E6719CC0019E117 /* ItemDetailsVC.swift in Sources */,
 				CA1A67781E63309C009066E8 /* Item_extension.swift in Sources */,
 				CA952ED81E670F840019E117 /* ItemType+CoreDataProperties.swift in Sources */,
 				CAABBDAA1E6195510002E95C /* MaterialView.swift in Sources */,
