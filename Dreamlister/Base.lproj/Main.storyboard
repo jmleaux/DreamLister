@@ -105,8 +105,8 @@
                                             <constraints>
                                                 <constraint firstItem="0cW-8q-ykf" firstAttribute="bottom" secondItem="fTq-hm-hd2" secondAttribute="bottomMargin" id="4nb-V7-TTX"/>
                                                 <constraint firstItem="0cW-8q-ykf" firstAttribute="trailing" secondItem="fTq-hm-hd2" secondAttribute="trailingMargin" id="8dg-lQ-ivB"/>
-                                                <constraint firstItem="0cW-8q-ykf" firstAttribute="top" secondItem="fTq-hm-hd2" secondAttribute="topMargin" id="a7j-q0-H8v"/>
                                                 <constraint firstItem="0cW-8q-ykf" firstAttribute="leading" secondItem="fTq-hm-hd2" secondAttribute="leadingMargin" id="iBg-fB-38h"/>
+                                                <constraint firstItem="0cW-8q-ykf" firstAttribute="top" secondItem="fTq-hm-hd2" secondAttribute="topMargin" id="wrk-NS-eCh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -261,6 +261,12 @@
                             <color key="tintColor" red="1" green="0.16896057640000001" blue="0.31107779990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="FjV-3u-MoT" id="fnn-9h-26D"/>
+                        <outlet property="priceField" destination="99C-uw-16r" id="fDR-Dj-RnQ"/>
+                        <outlet property="storePicker" destination="17F-GL-5f8" id="wyf-II-gVj"/>
+                        <outlet property="titleField" destination="Zfe-gV-1kn" id="epZ-Cl-dDg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAU-o7-H0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
