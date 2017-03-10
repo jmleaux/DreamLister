@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  Dreamlister
 //
-//  Created by J. M. Lowe on 3/1/17.
+//  Created by J. M. Lowe on 3/6/17.
 //  Copyright © 2017 JMLeaux LLC. All rights reserved.
 //
 
@@ -22,23 +22,6 @@ extension Item {
     @NSManaged public var title: String?
     @NSManaged public var toImage: Image?
     @NSManaged public var toItemType: ItemType?
-    @NSManaged public var toStore: NSSet?
-
-}
-
-// MARK: Generated accessors for toStore
-extension Item {
-
-    @objc(addToStoreObject:)
-    @NSManaged public func addToToStore(_ value: Store)
-
-    @objc(removeToStoreObject:)
-    @NSManaged public func removeFromToStore(_ value: Store)
-
-    @objc(addToStore:)
-    @NSManaged public func addToToStore(_ values: NSSet)
-
-    @objc(removeToStore:)
-    @NSManaged public func removeFromToStore(_ values: NSSet)
+    @NSManaged public var toStore: Store?
 
 }
