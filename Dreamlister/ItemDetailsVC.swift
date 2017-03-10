@@ -31,20 +31,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         storePicker.delegate = self
         storePicker.dataSource = self
         
-//        let store = Store(context: context)
-//        store.name = "Best Buy"
-//        let store2 = Store(context: context)
-//        store2.name = "Tesla Dealership"
-//        let store3 = Store(context: context)
-//        store3.name = "Amazon"
-//        let store4 = Store(context: context)
-//        store4.name = "Fry's Electronics"
-//        let store5 = Store(context: context)
-//        store5.name = "Target"
-//        let store6 = Store(context: context)
-//        store6.name = "Wal Mart"
-//        
-//        ad.saveContext()
+//        generateStores()
 
         getStores()
     }
@@ -103,10 +90,30 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         ad.saveContext()
         
+        _ = navigationController?.popViewController(animated: true)
+        
     }
 
     
-    
+    func generateStores() {
+        let store = Store(context: context)
+        store.name = "Best Buy"
+        let store2 = Store(context: context)
+        store2.name = "Tesla Dealership"
+        let store3 = Store(context: context)
+        store3.name = "Amazon"
+        let store4 = Store(context: context)
+        store4.name = "Fry's Electronics"
+        let store5 = Store(context: context)
+        store5.name = "Target"
+        let store6 = Store(context: context)
+        store6.name = "Wal Mart"
+        let store7 = Store(context: context)
+        store7.name = "Apple Store"
+        
+        ad.saveContext()
+
+    }
     
     
     
