@@ -22,6 +22,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var thumbImg: UIImageView!
     
     var stores = [Store]()
+    var itemTypes = [ItemType]()
     var itemToEdit: Item?   //optional because we won't ALWAYS edit when we enter this view
     var imagePicker: UIImagePickerController!
     
@@ -39,8 +40,12 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         imagePicker.delegate = self
         
 //        generateStores()
+        
+//        generateItemTypes()
 
         getStores()
+        
+        getItemTypes()
         
         if itemToEdit != nil {
             loadItemData()
@@ -53,16 +58,25 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let store = stores[row]
-        return store.name
+        if component == 0 {
+            let store = stores[row]
+            return store.name
+        } else {
+            let itemType = itemTypes[row]
+            return itemType.type
+        }
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return stores.count
+        if component == 0 {
+            return stores.count
+        } else {
+            return itemTypes.count
+        }
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -80,14 +94,21 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
     }
     
+    func getItemTypes() {
+        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+        do {
+            self.itemTypes = try context.fetch(fetchRequest)
+            self.storePicker.reloadAllComponents()
+        } catch {
+            // handle error
+        }
+    }
     
     @IBAction func savePressed(_ sender: UIButton) {
         
         var item: Item!
         let picture = Image(context: context)
         picture.image = thumbImg.image
-        
-        
         
         if itemToEdit == nil {
             item = Item(context: context)
@@ -111,6 +132,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
         item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        item.toItemType = itemTypes[storePicker.selectedRow(inComponent: 1)]
         
         ad.saveContext()
         
@@ -139,6 +161,22 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 
     }
     
+    func generateItemTypes() {
+        let itype = ItemType(context: context)
+        itype.type = "Electronics"
+        let itype2 = ItemType(context: context)
+        itype2.type = "Automobiles"
+        let itype3 = ItemType(context: context)
+        itype3.type = "Art"
+        let itype4 = ItemType(context: context)
+        itype4.type = "Clothing"
+        let itype5 = ItemType(context: context)
+        itype5.type = "Books"
+        let itype6 = ItemType(context: context)
+        itype6.type = "Music"
+        let itype7 = ItemType(context: context)
+        itype7.type = "Movies"
+    }
     
     func loadItemData() {
         if let item = itemToEdit {
@@ -158,6 +196,18 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     }
                     index+=1
                 } while (index < stores.count)
+            }
+            
+            if let iType = item.toItemType {
+                var index = 0
+                repeat {
+                    let i = itemTypes[index]
+                    if i.type == iType.type {
+                        storePicker.selectRow(index, inComponent: 1, animated:true)
+                        break
+                    }
+                    index+=1
+                } while (index < itemTypes.count)
             }
         }
     }
