@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-// Put this piece of code anywhere you like
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -38,16 +37,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
 
-//        generateTestData()
-
         attemptFetch()
         let loadedObjects = controller.fetchedObjects
-        if loadedObjects?.count == 0 {
-            generateTestData()
-            attemptFetch()
+        if loadedObjects?.count == 0 {                  //if we have nothing in CoreData
+            generateTestData()                          //save some initial data
+            attemptFetch()                              //and then load it
         }
-        
-        
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -81,37 +76,31 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        if let sections = controller.sections
-        {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let sections = controller.sections {
             let sectionInfo = sections[section]
             return sectionInfo.numberOfObjects
         }
         return 0
-        
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int
-    {
-        if let sections = controller.sections
-        {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = controller.sections {
             return sections.count
         }
         return 0
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150        
     }
     
-    func attemptFetch()
-    {
+    func attemptFetch() {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let priceSort = NSSortDescriptor(key: "price", ascending: true)
         let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        let typeSort = NSSortDescriptor(key: "toItemType.type", ascending: true)
         
         if segment.selectedSegmentIndex == 0 {
             fetchRequest.sortDescriptors = [dateSort]
@@ -119,9 +108,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             fetchRequest.sortDescriptors = [priceSort]
         } else if segment.selectedSegmentIndex == 2 {
             fetchRequest.sortDescriptors = [titleSort]
+        } else if segment.selectedSegmentIndex == 3 {
+            fetchRequest.sortDescriptors = [typeSort]
         }
-        
-//        fetchRequest.sortDescriptors = [dateSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 
@@ -129,13 +118,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         self.controller = controller
         
-        do
-        {
+        do {
             try controller.performFetch()
-            
         }
-        catch
-        {
+        catch {
             let error = error as NSError
             print("\(error)")
         }
@@ -148,21 +134,17 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
-    {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
-    {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
     
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
-    {
-        switch(type)
-        {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch(type) {
             //insert, delete, update, move
         case.insert:
             if let indexPath = newIndexPath
