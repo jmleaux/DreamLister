@@ -57,6 +57,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+
         if let topItem = self.navigationController?.navigationBar.topItem
         {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
@@ -68,10 +70,6 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-//        generateStores()          //run once only to seed initial Stores values
-        
-//        generateItemTypes()       //run once only to seed initial ItemType values
-
         getStores()                 //load the Stores from CoreData
         if stores.count == 0 {      //if there are no stores in CoreData...
             generateStores()        //...add some
@@ -126,6 +124,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         
         do {
             self.stores = try context.fetch(fetchRequest)
+            stores = stores.sorted(by: { (first: Store, second: Store) -> Bool in first.name! < second.name! })
             self.storePicker.reloadAllComponents()
         } catch {
             // handle error
@@ -136,6 +135,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
         do {
             self.itemTypes = try context.fetch(fetchRequest)
+            itemTypes = itemTypes.sorted(by: {(first: ItemType, second: ItemType) -> Bool in first.type! < second.type! })
             self.storePicker.reloadAllComponents()
         } catch {
             // handle error
