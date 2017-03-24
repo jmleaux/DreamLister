@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     
@@ -29,6 +28,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
 //        generateTestData()
 
         attemptFetch()
+        let loadedObjects = controller.fetchedObjects
+        if loadedObjects?.count == 0 {
+            generateTestData()
+            attemptFetch()
+        }
         
         
     }
@@ -115,6 +119,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         do
         {
             try controller.performFetch()
+            
         }
         catch
         {

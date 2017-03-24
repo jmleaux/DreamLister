@@ -10,7 +10,35 @@ import UIKit
 import CoreData
 
 
+extension String {
+    struct xNumberFormatter {
+        static let instance = NumberFormatter()
+    }
 
+    func removeFormatAmount() -> Double {
+        
+            let formatter = NumberFormatter()
+        
+            formatter.locale = Locale(identifier: "en_US")
+            formatter.numberStyle = .currency
+            formatter.currencySymbol = "$"
+            formatter.decimalSeparator = ","
+        
+            return formatter.number(from: self) as Double? ?? 0
+    }
+    var doubleValue:Double? {
+        return xNumberFormatter.instance.number(from: self)?.doubleValue
+    }
+}
+
+func formatCurrency(value: Double) -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    formatter.maximumFractionDigits = 2;
+    formatter.locale = Locale(identifier: Locale.current.identifier)
+    let result = formatter.string(from: value as NSNumber);
+    return result!;
+}
 
 class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -21,9 +49,10 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     
     @IBOutlet weak var thumbImg: UIImageView!
     
-    var stores = [Store]()
-    var itemTypes = [ItemType]()
-    var itemToEdit: Item?   //optional because we won't ALWAYS edit when we enter this view
+    var stores = [Store]()          //an array to place all the stores we have saved in CoreData
+    var itemTypes = [ItemType]()    //an array to place all the ItemTypes we have saved in CoreData
+    
+    var itemToEdit: Item?           //optional because we won't ALWAYS edit when we enter this view
     var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
@@ -39,13 +68,21 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
-//        generateStores()
+//        generateStores()          //run once only to seed initial Stores values
         
-//        generateItemTypes()
+//        generateItemTypes()       //run once only to seed initial ItemType values
 
-        getStores()
+        getStores()                 //load the Stores from CoreData
+        if stores.count == 0 {      //if there are no stores in CoreData...
+            generateStores()        //...add some
+            getStores()             //...then go load them
+        }
         
-        getItemTypes()
+        getItemTypes()              //load the ItemTypes from CoreData
+        if itemTypes.count == 0 {   //if there are no item types in CoreData...
+            generateItemTypes()     //...add some
+            getItemTypes()          //...then go load them
+        }
         
         if itemToEdit != nil {
             loadItemData()
@@ -58,25 +95,26 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            let store = stores[row]
-            return store.name
+        if component == 0 {                 //if this is the first column
+            let store = stores[row]         //set store variable to the value in the array
+            return store.name               //return the name of the store
         } else {
-            let itemType = itemTypes[row]
-            return itemType.type
+            let itemType = itemTypes[row]   //since component != 0, this must be the second column;
+                                            //set itemtype variableto the value in the array
+            return itemType.type            //return the name of the ItemType
         }
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
-            return stores.count
+            return stores.count     //if this is the first column, return number of stores
         } else {
-            return itemTypes.count
+            return itemTypes.count  //if this is the second column, return number of ItemTypes
         }
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        return 2    //THIS is where we define there will be TWO columns in the pickerview!
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -110,21 +148,25 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         let picture = Image(context: context)
         picture.image = thumbImg.image
         
-        if itemToEdit == nil {
-            item = Item(context: context)
-            
+        if itemToEdit == nil {                  //if no item was selected to edit from the list (they hit '+' button)
+            item = Item(context: context)       //then set the item variable to THIS screen contents
         } else {
-            item = itemToEdit
+            item = itemToEdit                   //otherwise set the item variable to what was selected from the list
         }
         
         item.toImage = picture
 
         if let title = titleField.text {
-            item.title = title
+            item.title = title                  //if item title is valid string, use it
         }
         
-        if let price = priceField.text {
-            item.price = (price as NSString).doubleValue
+        if let price = priceField.text {                        //if price field exists
+            if (price.doubleValue != nil) {                     //if it is already a valid Double value
+                item.price = (price as NSString).doubleValue    //store it
+            } else {
+                item.price = price.removeFormatAmount()         //otherwise strip the formatting (produces Double)
+                                                                //and store it
+            }
         }
         
         if let details = detailsField.text {
@@ -181,7 +223,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     func loadItemData() {
         if let item = itemToEdit {
             titleField.text = item.title
-            priceField.text = "\(item.price)"
+//            priceField.text = "\(item.price)"
+            priceField.text =  formatCurrency(value: item.price)
             detailsField.text = item.details
             
             thumbImg.image = item.toImage?.image as? UIImage
